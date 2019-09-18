@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/pprathameshmore/quotegarden/issues"
   },
-  "homepage": "https://github.com/pprathameshmore/quotegarden#readme"
+  "homepage": "https://github.com/pprathameshmore/quotegarden#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.1",
+    "nodeman": "^1.1.2"
+  }
 }

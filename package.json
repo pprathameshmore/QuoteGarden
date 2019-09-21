@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/pprathameshmore/quotegarden#readme",
   "dependencies": {
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
     "mongoose": "^5.7.1",
     "nodeman": "^1.1.2"

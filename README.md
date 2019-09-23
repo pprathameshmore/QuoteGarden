@@ -26,7 +26,7 @@ Returns a single random quote from the database.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quote/random ```
+``` https://quote-garden.herokuapp.com/quotes/random ```
 
 #### Response
 
@@ -44,7 +44,7 @@ Returns multiple quotes for a particular author.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quote/search/:authorName ```
+``` https://quote-garden.herokuapp.com/quotes/search/:authorName ```
 
 
 #### Response
@@ -62,7 +62,7 @@ Returns all quotes from the database.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quote/all ```
+``` https://quote-garden.herokuapp.com/quotes/all ```
 
 #### Response
 ```javascript

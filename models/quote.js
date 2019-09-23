@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 //Define schema for quotes
 const quoteSchema = new mongoose.Schema({
-    content: String,
-    author: String
+    quoteText: String,
+    quoteAuthor: String
 });
 
 //Create model on the basis of quote schema

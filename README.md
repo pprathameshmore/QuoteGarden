@@ -1,9 +1,10 @@
 ![Icon](/assets/icon.png)
 
+
 # Quote Garden
 A REST API for quotes.
 
-I originally built this for [Achieve Chrome Extension](https://github.com/pprathameshmore/Achieve-Chrome-Extension) project, and decided to publish for others to use as well. The database currently includes more 5000 quotes
+I originally built this for [Achieve Chrome Extension](https://github.com/pprathameshmore/Achieve-Chrome-Extension) project and decided to publish for others to use as well. The database currently includes more than 5000 quotes
 
 ![Build](https://travis-ci.com/pprathameshmore/QuoteGarden.svg?branch=master)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020?style=plastic)
@@ -39,7 +40,7 @@ Returns a single random quote from the database.
 
 ### Get quotes by author
 
-Returns a multiple quotes for perticular author.
+Returns multiple quotes for a particular author.
 
 #### Request
 
@@ -57,7 +58,7 @@ Returns a multiple quotes for perticular author.
 
 ### Get all quotes
 
-Returns all quotes from database.
+Returns all quotes from the database.
 
 #### Request
 
@@ -74,7 +75,6 @@ Returns all quotes from database.
 ## Contributing
 
 All feedback and contributions are welcome!
-
 
 ## License
 

@@ -29,7 +29,7 @@ Returns a single random quote from the database.
 
 #### Response
 
-``` 
+```javascript
 {
   _id: string,
   quoteText: string,
@@ -48,7 +48,7 @@ Returns a multiple quotes for perticular author.
 
 #### Response
 
-```
+```javascript
 {
     count: int,
     results : array
@@ -64,7 +64,7 @@ Returns all quotes from database.
 ``` https://quote-garden.herokuapp.com/quote/all ```
 
 #### Response
-```
+```javascript
 {
     count: int,
     results : array

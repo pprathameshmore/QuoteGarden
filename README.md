@@ -37,7 +37,7 @@ Returns a single random quote from the database.
 }
 ```
 
-## Get quotes by author
+### Get quotes by author
 
 Returns a multiple quotes for perticular author.
 
@@ -71,12 +71,12 @@ Returns all quotes from database.
 }
 ```
 
-#### Contributing
+## Contributing
 
 All feedback and contributions are welcome!
 
 
-#### License
+## License
 
 ``` 
 The MIT License (MIT)

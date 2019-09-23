@@ -1,2 +1,104 @@
-# quotegarden
+# Quote Garden
 A REST API for quotes.
+
+I originally built this for [Achieve Chrome Extension](https://github.com/pprathameshmore/Achieve-Chrome-Extension) project, and decided to publish for others to use as well. The database currently includes more 5000 quotes
+
+![Maintenance](https://img.shields.io/maintenance/yes/2020?style=plastic)
+![GitHub top language](https://img.shields.io/github/languages/top/pprathameshmore/QuoteGarden?style=plastic)
+![GitHub](https://img.shields.io/github/license/pprathameshmore/QuoteGarden?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/pprathameshmore/QuoteGarden?style=plastic)
+
+## Table of Contents
+
+* [Get a random quote](#get-a-random-quote).
+* [Get quotes by author](#get-quotes-by-author).
+* [Get all quotes](#get-all-quotes).
+
+## API Documentation
+
+### Get a random quote
+
+Returns a single random quote from the database.
+
+#### Request
+
+``` https://quote-garden.herokuapp.com/quote/random ```
+
+#### Response
+
+``` 
+{
+  _id: string,
+  quoteText: string,
+  quoteAuthor: string
+}
+```
+
+## Get quotes by author
+
+Returns a multiple quotes for perticular author.
+
+#### Request
+
+``` https://quote-garden.herokuapp.com/quote/search/:authorName ```
+
+
+#### Response
+
+```
+{
+    count: int,
+    results : array
+}
+```
+
+### Get all quotes
+
+Returns all quotes from database.
+
+#### Request
+
+``` https://quote-garden.herokuapp.com/quote/all ```
+
+#### Response
+```
+{
+    count: int,
+    results : array
+}
+```
+
+#### Contributing
+
+All feedback and contributions are welcome!
+
+
+#### License
+
+``` 
+The MIT License (MIT)
+=====================
+
+Copyright © 2019 Prathamesh More
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the “Software”), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE. ```
+

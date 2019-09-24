@@ -71,6 +71,8 @@ Returns all quotes from the database.
     results : array
 }
 ```
+### Get quotes by keyword (Upcoming feature)
+
 
 ## Contributing
 

@@ -14,9 +14,10 @@ I originally built this for [Achieve Chrome Extension](https://github.com/pprath
 
 ## Table of Contents
 
-* [Get a random quote](#get-a-random-quote).   PratahemshMOrej
-* [Get quotes by author](#get-quotes-by-author).
+* [Get a random quote](#get-a-random-quote).
+* [Get all quotes by author](#get-quotes-by-author).
 * [Get all quotes](#get-all-quotes).
+* [Get all quotes by keyword](#get-all-quotes-by-keyword).
 
 ## API Documentation
 
@@ -72,9 +73,15 @@ Returns all quotes from the database.
 }
 ```
 
-### Get quotes by keyword (Beta)
+### Get all quotes by keyword
+
+Returns all quotes with matching keywords.
+
+#### Request
 
 ``` https://quote-garden.herokuapp.com/quotes/search/:query ```
+
+#### Response
 
 ``` javascript
 {

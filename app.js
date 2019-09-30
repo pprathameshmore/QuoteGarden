@@ -9,7 +9,7 @@ const Quote = require("./models/quote");
 //Consts
 //const PORT = 3000;
 //const URL = "192.168.43.61";
-const PORT = process.env.PORT || 3000
+app.set('port', (process.env.PORT || 3000))
 const DB_URL = "mongodb+srv://prathameshmore:9420776721@quotedatabase-btgnl.mongodb.net/test?retryWrites=true&w=majority";
 
 app.set("view engine", "ejs");
@@ -146,7 +146,7 @@ app.get("*", (request, response) => {
 });
 
 //Start server
-app.listen(PORT, () => {
-    console.log("Server running on port : " + PORT)
+app.listen(app.get('port'), () => {
+    console.log("Server running on port : " + app.get('port'))
     console.log("Request is hitted");
 });

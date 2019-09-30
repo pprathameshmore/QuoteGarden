@@ -11,7 +11,7 @@ const Quote = require("./models/quote");
 //const URL = "192.168.43.61";
 app.set('port', (process.env.PORT || 3000))
 const DB_URL = "mongodb+srv://prathameshmore:9420776721@quotedatabase-btgnl.mongodb.net/test?retryWrites=true&w=majority";
-
+const DB_URL_LOCAL = "mongodb://localhost:27017/";
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.json());
@@ -21,18 +21,20 @@ app.use(bodyParser.urlencoded({
 
 //Database connection
 mongoose.connect(DB_URL, {
-    dbName: 'quotes'
-}, {
-    useNewUrlParser: true
-}, {
-    useUnifiedTopology: true
-}, (error) => {
-    if (error) {
-        console.log("Ooops!!! Something went wrong! :(" + error);
-    } else {
-        console.log("Successfully connected to database :)");
-    }
-});
+        dbName: 'quotegarden'
+    }, {
+        useNewUrlParser: true
+    },
+    /* {
+        useUnifiedTopology: true
+    }, */
+    (error) => {
+        if (error) {
+            console.log("Ooops!!! Something went wrong! :(" + error);
+        } else {
+            console.log("Successfully connected to database :)");
+        }
+    });
 
 //Simple GET method
 app.get("/", (request, response) => {
@@ -58,25 +60,26 @@ app.get("/quotes/random", async (request, response) => {
 });
 
 //Routes to find as per author's name
-app.get("/quotes/search/:authorName", async (request, response) => {
+app.get("/quotes/author/:authorName", async (request, response) => {
     try {
         let count = await Quote.countDocuments({
             quoteAuthor: request.params.authorName
         });
         await Quote.find({
             quoteAuthor: request.params.authorName
-        }, (error, quote) => {
+        }, (error, quotes) => {
             if (error) {
                 console.log(error);
                 response.status(404).json({
                     // The server can not find requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the resource itself does not exist. Servers may also send this response instead of 403 to hide the existence of a resource from an unauthorized client. This response code is probably the most famous one due to its frequent occurrence on the web.
                     status: 404,
                     message: "The server can not find requested resource."
+
                 });
             } else {
                 response.status(200).json({
                     count: count,
-                    results: quote
+                    results: quotes
                 });
             }
         });
@@ -84,6 +87,38 @@ app.get("/quotes/search/:authorName", async (request, response) => {
         return error;
     }
 
+});
+
+app.get("/quotes/search/:query", async (request, response) => {
+    try {
+        let query = request.params.query;
+        let count = await Quote.countDocuments({
+
+            "quoteText": {
+                $regex: query,
+                $options: 'i'
+            }
+
+        });
+        await Quote.find({
+            "quoteText": new RegExp(request.params.query, 'ig')
+
+        }, (error, quotes) => {
+            if (error) {
+                response.status(400).json({
+                    status: 404,
+                    message: "The server can not find request resource."
+                });
+            } else {
+                response.status(200).json({
+                    count: count,
+                    results: quotes
+                });
+            }
+        });
+    } catch (error) {
+        return error;
+    }
 });
 
 //Route for matching text in quote

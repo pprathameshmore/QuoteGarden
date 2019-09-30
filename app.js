@@ -28,7 +28,7 @@ mongoose.connect(DB_URL, {
     useUnifiedTopology: true
 }, (error) => {
     if (error) {
-        console.log("Ooops!!! Something went wrong! :(");
+        console.log("Ooops!!! Something went wrong! :(" + error);
     } else {
         console.log("Successfully connected to database :)");
     }

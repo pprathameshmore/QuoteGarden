@@ -21,10 +21,10 @@ app.use(bodyParser.urlencoded({
 
 //Database connection
 mongoose.connect(DB_URL, {
-        dbName: 'quotegarden'
-    }, {
-        useNewUrlParser: true
-    },
+    dbName: 'quotegarden'
+}, {
+    useNewUrlParser: true
+},
     /* {
         useUnifiedTopology: true
     }, */
@@ -43,9 +43,9 @@ app.get("/", (request, response) => {
 
 
 //Simple random requests
-app.get("/quotes/random", async (request, response) => {
+app.get("/quotes/random", (request, response) => {
     try {
-        await Quote.countDocuments({}).exec(function (error, count) {
+        Quote.countDocuments({}).exec(function (error, count) {
             var random = Math.floor(Math.random() * count);
             Quote.findOne().skip(random).exec(function (error, quote) {
                 response.status(200).json(quote);

@@ -149,10 +149,6 @@ app.get("/quotes/all", async (request, response) => {
 
 });
 
-//Route to the add page
-app.get("/quotes/new", (request, response) => {
-    response.status(200).render("new");
-});
 
 app.post("/quotes/new", async (request, response) => {
     try {

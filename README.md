@@ -1,9 +1,10 @@
 ![Icon](/assets/icon.png)
 
+
 # Quote Garden
 A REST API for quotes.
 
-I originally built this for [Achieve Chrome Extension](https://github.com/pprathameshmore/Achieve-Chrome-Extension) project, and decided to publish for others to use as well. The database currently includes more 5000 quotes
+I originally built this for [Achieve Chrome Extension](https://github.com/pprathameshmore/Achieve-Chrome-Extension) project and decided to publish for others to use as well. The database currently includes more than 5000 quotes
 
 ![Build](https://travis-ci.com/pprathameshmore/QuoteGarden.svg?branch=master)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020?style=plastic)
@@ -25,11 +26,11 @@ Returns a single random quote from the database.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quote/random ```
+``` https://quote-garden.herokuapp.com/quotes/random ```
 
 #### Response
 
-``` 
+```javascript
 {
   _id: string,
   quoteText: string,
@@ -37,18 +38,18 @@ Returns a single random quote from the database.
 }
 ```
 
-## Get quotes by author
+### Get quotes by author
 
-Returns a multiple quotes for perticular author.
+Returns multiple quotes for a particular author.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quote/search/:authorName ```
+``` https://quote-garden.herokuapp.com/quotes/search/:authorName ```
 
 
 #### Response
 
-```
+```javascript
 {
     count: int,
     results : array
@@ -57,26 +58,27 @@ Returns a multiple quotes for perticular author.
 
 ### Get all quotes
 
-Returns all quotes from database.
+Returns all quotes from the database.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quote/all ```
+``` https://quote-garden.herokuapp.com/quotes/all ```
 
 #### Response
-```
+```javascript
 {
     count: int,
     results : array
 }
 ```
+### Get quotes by keyword (Upcoming feature)
 
-#### Contributing
+
+## Contributing
 
 All feedback and contributions are welcome!
 
-
-#### License
+## License
 
 ``` 
 The MIT License (MIT)

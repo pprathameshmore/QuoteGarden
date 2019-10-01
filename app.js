@@ -38,7 +38,7 @@ mongoose.connect(DB_URL_LOCAL, {
 
 //Simple GET method
 app.get("/", (request, response) => {
-    response.status(200).send("API is running");
+    response.status(200).render("index");
 });
 
 

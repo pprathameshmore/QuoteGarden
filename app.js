@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 //Database connection
-mongoose.connect(DB_URL_LOCAL, {
+mongoose.connect(DB_URL, {
     dbName: 'quotes'
 }, {
     useNewUrlParser: true

@@ -12,22 +12,22 @@ const Quote = require("./models/quote");
 app.set('port', (process.env.PORT || 3000))
 const DB_URL = "mongodb+srv://prathameshmore:9420776721@quotedatabase-btgnl.mongodb.net/test?retryWrites=true&w=majority";
 const DB_URL_LOCAL = "mongodb://localhost:27017/";
-app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }))
 
 //Database connection
-mongoose.connect(DB_URL, {
-    dbName: 'quotegarden'
+mongoose.connect(DB_URL_LOCAL, {
+    dbName: 'quotes'
 }, {
     useNewUrlParser: true
 },
-    /* {
+    {
         useUnifiedTopology: true
-    }, */
+    },
     (error) => {
         if (error) {
             console.log("Ooops!!! Something went wrong! :(" + error);
@@ -43,9 +43,9 @@ app.get("/", (request, response) => {
 
 
 //Simple random requests
-app.get("/quotes/random", (request, response) => {
+app.get("/quotes/random", async (request, response) => {
     try {
-        Quote.countDocuments({}).exec(function (error, count) {
+        await Quote.countDocuments({}).exec(function (error, count) {
             var random = Math.floor(Math.random() * count);
             Quote.findOne().skip(random).exec(function (error, quote) {
                 response.status(200).json(quote);

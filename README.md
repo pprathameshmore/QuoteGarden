@@ -92,7 +92,7 @@ Returns all quotes with matching keywords.
 ### Upcoming feature - Sorting
 
 ## Get featured
-If you are using my API application, get featured here.
+If you are using my API in your application, get featured here.
 Make an issue with your application.
 
 ## Contributing

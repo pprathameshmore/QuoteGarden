@@ -95,6 +95,8 @@ Returns all quotes with matching keywords.
 If you are using my API in your application, get featured here.
 Make an issue with your application.
 
+- [frikishaan.xyz](https://frikishaan.xyz/) by [sheikh005](https://github.com/sheikh005)
+
 ## Contributing
 
 All feedback and contributions are welcome!

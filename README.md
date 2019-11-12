@@ -96,6 +96,7 @@ If you are using my API in your application, get featured here.
 Make an issue with your application.
 
 - [frikishaan.xyz](https://frikishaan.xyz/) by [sheikh005](https://github.com/sheikh005)
+- [Bink Chrome Extension](https://chrome.google.com/webstore/detail/hobnhcjgdhdcmgcjlidgcladgdlbpgba) by [AmitGujar](https://github.com/AmitGujar)
 
 ## Contributing
 

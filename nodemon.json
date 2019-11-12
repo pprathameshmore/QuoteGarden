@@ -1,0 +1,5 @@
+{
+    "env" : {
+        "DB_URL" : "mongodb+srv://prathameshmore:9420776721@quotedatabase-btgnl.mongodb.net/test?retryWrites=true&w=majority"
+    }
+}

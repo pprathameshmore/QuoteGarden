@@ -97,6 +97,7 @@ Make an issue with your application.
 
 - [frikishaan.xyz](https://frikishaan.xyz/) by [sheikh005](https://github.com/sheikh005)
 - [Bink Chrome Extension](https://chrome.google.com/webstore/detail/hobnhcjgdhdcmgcjlidgcladgdlbpgba) by [AmitGujar](https://github.com/AmitGujar)
+- [Twitter Bot](https://twitter.com/quotegardenbot) by [ahzam1](https://github.com/ahzam1)
 
 ## Contributing
 

@@ -6,8 +6,6 @@ exports.random = async (request, response) => {
             var random = Math.floor(Math.random() * count);
             Quote.findOne().skip(random).exec(function (error, quote) {
                 response.status(200).json(quote);
-
-                console.log("Request is hitted");
             });
         });
     } catch (error) {

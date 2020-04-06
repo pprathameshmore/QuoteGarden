@@ -1,15 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const QuoteController = require('../controllers/quotes');
+const quoteController = require('../controllers/quotes');
 
+const cacheMiddleware = require('../middlewares/cache');
 
 //Simple random requests
-router.get("/random", QuoteController.random);
+router.get("/random", quoteController.random);
 //Routes to find as per author's name
-router.get("/author/:authorName", QuoteController.author_name);
-router.get("/search/:query", QuoteController.search_query);
+router.get("/author/:authorName", quoteController.author_name);
+router.get("/search/:query", quoteController.search_query);
 //Get all quotes
-router.get("/all", QuoteController.get_all_quotes);
-router.post("/new", QuoteController.create_new_quote);
+router.get("/all", quoteController.get_all_quotes);
+router.post("/new", quoteController.create_new_quote);
+
 
 module.exports = router;

@@ -21,22 +21,28 @@ I originally built this for [Achieve Chrome Extension](https://github.com/pprath
 
 ## API Documentation
 
+#### The older version of API is now decrepitating soon. Please upgrade to new version 2 (V2) API routes for improved performance, caching, paging, etc.
+
 ### Get a random quote
 
 Returns a single random quote from the database.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quotes/random ```
+``` https://quote-garden.herokuapp.com/api/v2/random ```
 
 #### Response
 
 ```javascript
 {
-  _id: string,
-  quoteText: string,
-  quoteAuthor: string
+  statusCode : int,
+  {
+    _id: string,
+    quoteText: string,
+    quoteAuthor: string
+  }
 }
+
 ```
 
 ### Get quotes by author
@@ -45,15 +51,18 @@ Returns multiple quotes for a particular author.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quotes/author/:authorName ```
+``` https://quote-garden.herokuapp.com/api/v2/authors/:authorName?page=1&limit=10 ```
 
+Query parameters are optional
 
 #### Response
 
 ```javascript
 {
-    count: int,
-    results : array
+  statusCode : int,
+  totalPages : int,
+  currentPage : int,
+  quotes : array
 }
 ```
 
@@ -63,13 +72,15 @@ Returns all quotes from the database.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quotes/all ```
+``` https://quote-garden.herokuapp.com/api/v2/all?page=1&limit=10 ```
 
 #### Response
 ```javascript
 {
-    count: int,
-    results : array
+  statusCode : int,
+  totalPages : int,
+  currentPage : int,
+  quotes : array
 }
 ```
 
@@ -79,17 +90,18 @@ Returns all quotes with matching keywords.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/quotes/search/:query ```
+``` https://quote-garden.herokuapp.com/api/v2/quotes/:searchQuery?page=1&limit=10```
 
 #### Response
 
 ``` javascript
 {
-  count : int,
-  results : array
+  statusCode : int,
+  totalPages : int,
+  currentPage : int,
+  quotes : array
 }
 ```
-### Upcoming feature - Sorting
 
 ## Get featured
 If you are using my API in your application, get featured here.
@@ -97,6 +109,7 @@ Make an issue with your application.
 
 - [frikishaan.xyz](https://frikishaan.xyz/) by [sheikh005](https://github.com/sheikh005)
 - [Bink Chrome Extension](https://chrome.google.com/webstore/detail/hobnhcjgdhdcmgcjlidgcladgdlbpgba) by [AmitGujar](https://github.com/AmitGujar)
+- [pprathamesh.github.io](https://pprathameshmore.github.io/) by Prathamesh More
 
 ## Contributing
 

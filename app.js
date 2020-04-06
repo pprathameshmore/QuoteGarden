@@ -2,11 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require('path');
+const redis = require('./api/configs/redisConfig');
 const app = express();
 
 //Imports
-const Quote = require("./api/models/quote");
 const quotesRoute = require('./api/routes/quotes');
+const quoteRouteV2 = require('./api/routes/quotesV2');
 
 //Database connection
 mongoose.connect(process.env.DB_URL, {
@@ -16,6 +17,8 @@ mongoose.connect(process.env.DB_URL, {
 }, () => {
     console.log("Connected to Database");
 });
+
+
 app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -31,14 +34,14 @@ app.use((req, res, next) => {
 });
 
 app.use('/quotes', quotesRoute);
+app.use('/api', quoteRouteV2);
 
 app.use('/', (req, res, next) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/html");
-    res.send("<h2> Documentation can found on <a href='https://pprathameshmore.github.io/QuoteGarden/'>here</a> ");
+    res.sendFile(__dirname + '/public/index.html');
     next();
 });
-
 
 
 module.exports = app;

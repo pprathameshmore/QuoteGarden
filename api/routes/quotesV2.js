@@ -9,7 +9,7 @@ Verion V2 start from here
 */
 
 //Get random quote
-router.get('/v2/random', quoteController.v2Random);
+router.get('/v2/quotes/random', quoteController.v2Random);
 
 //Find by author name and serch query
 router.get('/v2/authors/:authorName', cacheMiddleware.isCached, quoteController.searchByAuthor);
@@ -18,6 +18,6 @@ router.get('/v2/authors/:authorName', cacheMiddleware.isCached, quoteController.
 router.get('/v2/quotes/:searchQuery', cacheMiddleware.isCached, quoteController.searchByQuote);
 
 //All quotes
-router.get('/v2/all', cacheMiddleware.isCachedAll, quoteController.allQuotes);
+router.get('/v2/quotes/all', cacheMiddleware.isCachedAll, quoteController.allQuotes);
 
 module.exports = router;

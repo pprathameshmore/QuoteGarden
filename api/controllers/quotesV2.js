@@ -47,12 +47,15 @@ exports.searchByAuthor = async (req, res, next) => {
         const { authorName } = req.params;
         let { page = 1, limit = 10 } = req.query;
 
+        const currentPage = parseInt(page);
+        const pageLimit = parseFloat(limit);
+
         const totalDocCount = await getDocCount.getDocCount();
 
         if (authorName) {
-            await Quote.find({ "quoteAuthor": new RegExp(authorName, 'ig') }).limit(limit * 1).skip(page - 1).then(quotes => {
+            await Quote.find({ "quoteAuthor": new RegExp(authorName, 'ig') }).skip((pageLimit * currentPage) - pageLimit).limit(pageLimit).then(quotes => {
                 if (quotes) {
-                    const total = Math.ceil(totalDocCount / limit);
+                    const total = Math.ceil(totalDocCount / pageLimit);
 
                     const redisStoreId = authorName + "-" + page + "-" + limit;
 
@@ -87,15 +90,18 @@ exports.searchByQuote = async (req, res, next) => {
         const { searchQuery } = req.params;
         let { page = 1, limit = 10 } = req.query;
 
+        const currentPage = parseInt(page);
+        const pageLimit = parseFloat(limit);
+
         const totalDocCount = await getDocCount.getDocCount();
 
         if (searchQuery) {
-            await Quote.find({ "quoteText": new RegExp(searchQuery, 'ig') }).limit(limit * 1).skip(page - 1).then(quotes => {
+            await Quote.find({ "quoteText": new RegExp(searchQuery, 'ig') }).skip((pageLimit * currentPage) - pageLimit).limit(pageLimit).then(quotes => {
                 if (quotes) {
 
                     const redisStoreId = searchQuery + "-" + page + "-" + limit;
 
-                    const total = Math.ceil(totalDocCount / limit);
+                    const total = Math.ceil(totalDocCount / pageLimit);
 
                     const response = generateResponse(200, total, parseInt(page), quotes);
 

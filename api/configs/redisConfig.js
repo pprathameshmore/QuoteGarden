@@ -5,7 +5,7 @@ const redis = require('redis');
 /*
 Redis connection
 */
-const redisClient = redis.createClient('redis://redistogo:818dc14eb0456fc5bfec46df3e64edd2@pike.redistogo.com:10617/');
+const redisClient = redis.createClient(process.env.REDIS_URL);
 redisClient.on('error', (err) => {
     console.log(err);
 });

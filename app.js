@@ -9,10 +9,8 @@ const app = express();
 const quotesRoute = require('./api/routes/quotes');
 const quoteRouteV2 = require('./api/routes/quotesV2');
 
-const DB_URL = "mongodb+srv://prathameshmore:9420776721@quotedatabase-btgnl.mongodb.net/test?retryWrites=true&w=majority"
-
 //Database connection
-mongoose.connect(DB_URL, {
+mongoose.connect(process.env.DB_URL, {
     dbName: 'quotes',
     useUnifiedTopology: true,
     useNewUrlParser: true

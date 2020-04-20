@@ -1,6 +1,0 @@
-{
-    "env" : {
-        "DB_URL" : "mongodb+srv://prathameshmore:9420776721@quotedatabase-btgnl.mongodb.net/test?retryWrites=true&w=majority",
-        "REDIS" : "redis://redistogo:818dc14eb0456fc5bfec46df3e64edd2@pike.redistogo.com:10617/"
-    }
-}

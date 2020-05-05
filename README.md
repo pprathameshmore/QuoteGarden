@@ -21,7 +21,7 @@ I originally built this for [Achieve Chrome Extension](https://github.com/pprath
 
 ## API Documentation
 
-#### The older version of API is now decrepitating soon. Please upgrade to new version 2 (V2) API routes for improved performance, caching, paging, etc.
+#### The older version of API is now deprecating soon. Please upgrade to new version 2 (V2) API routes for improved performance, caching, paging, etc.
 
 ### Get a random quote
 

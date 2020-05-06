@@ -25,6 +25,13 @@ app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(haltOnTimedout)
+
+// Add your routes here, etc.
+
+function haltOnTimedout(req, res, next) {
+    if (!req.timedout) next()
+}
 
 app.use(express.static(path.join(__dirname, 'public')));
 

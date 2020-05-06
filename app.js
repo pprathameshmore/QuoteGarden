@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require('path');
 const redis = require('./api/configs/redisConfig');
+const timeout = require('connect-timeout');
 const app = express();
 
 //Imports
@@ -10,7 +11,7 @@ const quotesRoute = require('./api/routes/quotes');
 const quoteRouteV2 = require('./api/routes/quotesV2');
 
 //Database connection
-mongoose.connect(process.env.DB_URL, {
+mongoose.connect(process.env.DB_URL || 'mongodb+srv://prathameshmore:pmore9420@quotedatabase-btgnl.mongodb.net/test?retryWrites=true&w=majority', {
     dbName: 'quotes',
     useUnifiedTopology: true,
     useNewUrlParser: true
@@ -18,9 +19,9 @@ mongoose.connect(process.env.DB_URL, {
     console.log("Connected to Database");
 });
 
-
+app.use(timeout('60s'));
 app.use(express.static("public"));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({
     extended: true
 }));

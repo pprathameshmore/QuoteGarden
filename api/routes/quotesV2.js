@@ -2,22 +2,39 @@ const express = require('express');
 const router = express.Router();
 const quoteController = require('../controllers/quotesV2');
 
+const Quote = require('../models/quote');
+
 const cacheMiddleware = require('../middlewares/cache');
 
 /*
-Verion V2 start from here
+Verizon V2 start from here
 */
 
 //Get random quote
 router.get('/v2/quotes/random', quoteController.v2Random);
 
-//Find by author name and serch query
+//Find by author name and search query
 router.get('/v2/authors/:authorName', cacheMiddleware.isCached, quoteController.searchByAuthor);
 
 //Find by search query
-router.get('/v2/quotes/:searchQuery', cacheMiddleware.isCached, quoteController.searchByQuote);
+//router.get('/v2/quotes/:searchQuery', cacheMiddleware.isCached, quoteController.searchByQuote);
 
 //All quotes
-router.get('/v2/quotes/all', cacheMiddleware.isCachedAll, quoteController.allQuotes);
+router.get('/v2/quotes/', cacheMiddleware.isCachedAll, quoteController.allQuotes);
+//Get single quote
+router.get('/v2/quotes/:quote_id', quoteController.getSingleQuote);
+
+/* router.post('/v2/quotes/', (req, res, next) => {
+
+    const { quotes } = req.body;
+
+    Quote.insertMany(quotes).then(quotes => {
+        console.log('Inserted');
+        return res.send('Inserted all');
+    }).catch(error => {
+        console.error(error);
+    });
+
+}); */
 
 module.exports = router;

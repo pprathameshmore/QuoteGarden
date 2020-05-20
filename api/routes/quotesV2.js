@@ -5,7 +5,7 @@ const quoteController = require('../controllers/quotesV2');
 const cacheMiddleware = require('../middlewares/cache');
 
 /*
-Verion V2 start from here
+Version V2 start from here
 */
 
 //Get random quote
@@ -15,7 +15,7 @@ router.get('/v2/quotes/random', quoteController.v2Random);
 router.get('/v2/authors/:authorName', cacheMiddleware.isCached, quoteController.searchByAuthor);
 
 //Find by search query
-router.get('/v2/quotes/:searchQuery', cacheMiddleware.isCached, quoteController.searchByQuote);
+//router.get('/v2/quotes/:searchQuery', cacheMiddleware.isCached, quoteController.searchByQuote);
 
 //All quotes
 router.get('/v2/quotes/all', cacheMiddleware.isCachedAll, quoteController.allQuotes);

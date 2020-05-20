@@ -1,13 +1,17 @@
 const Quote = require('../models/quote');
 const redisClient = require('../configs/redisConfig');
-
 const getDocCount = require('../helpers/getTotalDocCount');
-
 /*
 
 V2 controllers
 
 */
+
+/* const getDocCount = async () => {
+    console.log(count);
+    count = await Quote.countDocuments();
+} */
+
 
 function generateResponse(statusCode, totalPages, currentPage, quotes) {
     return {
@@ -23,7 +27,8 @@ exports.v2Random = async (req, res, next) => {
         const count = await getDocCount.getDocCount();
         const random = Math.floor(Math.random() * count);
 
-        await Quote.findOne().skip(random).then(quote => {
+        Quote.findOne().skip(random).then(quote => {
+            console.log(quote);
             if (quote) {
                 return res.status(200).json({
                     statusCode: 200,

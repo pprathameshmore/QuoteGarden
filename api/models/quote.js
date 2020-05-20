@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const quoteSchema = new mongoose.Schema({
     quoteText: String,
     quoteAuthor: String,
-    quoteGenres: String
+    quoteGenre: String
 });
 
 quoteSchema.index({ '_id': 1, 'quoteText': 1 });

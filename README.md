@@ -21,7 +21,7 @@ I originally built this for [Achieve Chrome Extension](https://github.com/pprath
 
 ## API Documentation
 
-#### The older version of API is now decrepitating soon. Please upgrade to new version 2 (V2) API routes for improved performance, caching, paging, etc.
+#### The older version of API is now deprecating soon. Please upgrade to new version 2 (V2) API routes for improved performance, caching, paging, etc.
 
 ### Get a random quote
 
@@ -111,6 +111,7 @@ Make an issue with your application.
 - [Bink Chrome Extension](https://chrome.google.com/webstore/detail/hobnhcjgdhdcmgcjlidgcladgdlbpgba) by [AmitGujar](https://github.com/AmitGujar)
 - [pprathamesh.github.io](https://pprathameshmore.github.io/) by Prathamesh More
 - [Twitter Bot](https://twitter.com/quotegardenbot) by [ahzam1](https://github.com/ahzam1)
+- [MotivateU](https://github.com/Shankhanil/MotivateU) by [Shankhanil Ghosh](https://github.com/Shankhanil)
 
 ## Contributing
 

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require('path');
 const redis = require('./api/configs/redisConfig');
+const timeout = require('connect-timeout');
 const app = express();
 
 //Imports
@@ -18,12 +19,19 @@ mongoose.connect('mongodb+srv://prathameshmore:9420776721@quotedatabase-btgnl.mo
     console.log("Connected to Database");
 });
 
-
+app.use(timeout('60s'));
 app.use(express.static("public"));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(haltOnTimedout)
+
+// Add your routes here, etc.
+
+function haltOnTimedout(req, res, next) {
+    if (!req.timedout) next()
+}
 
 app.use(express.static(path.join(__dirname, 'public')));
 

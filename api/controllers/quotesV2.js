@@ -93,7 +93,7 @@ exports.searchByQuote = async (req, res, next) => {
     try {
 
         const { searchQuery } = req.params;
-        let { page = 1, limit = 10 } = req.query;
+        let { author, genre, page = 1, limit = 10 } = req.query;
 
         const currentPage = parseInt(page);
         const pageLimit = parseFloat(limit);
@@ -135,32 +135,63 @@ exports.searchByQuote = async (req, res, next) => {
 
 exports.allQuotes = async (req, res, next) => {
 
-    let { page = 1, limit = 10 } = req.query;
+    let { page = 1, limit = 10, genre } = req.query;
 
     const totalDocCount = await getDocCount.getDocCount();
 
-    await Quote.find().limit(limit * 1).skip(page - 1).then(allQuotes => {
-        if (allQuotes) {
-            const total = Math.ceil(totalDocCount / limit);
-
-            const redisStoreId = "quote" + "-" + page + "-" + limit;
-
-            const response = generateResponse(200, total, parseInt(page), allQuotes);
-
-            redisClient.setex(redisStoreId, 120, JSON.stringify(response), (err, reply) => {
-                if (err) {
-                    console.log(err);
-                }
-                console.log(reply);
+    if (genre) {
+        await Quote.find({ quoteGenre: genre }).limit(limit * 1).skip(page - 1).then(quotes => {
+            if (quotes) {
+                const total = Math.ceil(quotes.length() / limit);
+                const response = generateResponse(200, total, parseInt(page), quotes);
+                return res.status(200).json(response);
+            }
+            return res.status(404).json({
+                statusCode: 404,
+                message: 'Quotes not found'
             });
+        }).catch(error => {
 
-            return res.status(200).json(response);
-        }
-        return res.status(404).json({
-            statusCode: 404,
-            message: 'Quotes not found'
         });
-    }).catch(error => {
-        console.log(error);
-    });
+    } else {
+
+        await Quote.find().limit(limit * 1).skip(page - 1).then(allQuotes => {
+            if (allQuotes) {
+                const total = Math.ceil(totalDocCount / limit);
+
+                const redisStoreId = "quote" + "-" + page + "-" + limit;
+
+                const response = generateResponse(200, total, parseInt(page), allQuotes);
+
+                redisClient.setex(redisStoreId, 120, JSON.stringify(response), (err, reply) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                    console.log(reply);
+                });
+
+                return res.status(200).json(response);
+            }
+            return res.status(404).json({
+                statusCode: 404,
+                message: 'Quotes not found'
+            });
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+
+}
+
+exports.getSingleQuote = async (req, res, next) => {
+    try {
+        const { quote_id } = req.params;
+        await Quote.findById(quote_id).then(quote => {
+            const response = generateResponse(200, 0, 0, quote);
+            return res.status(200).json(response);
+        });
+
+    } catch (error) {
+        console.error(error);
+    }
 }

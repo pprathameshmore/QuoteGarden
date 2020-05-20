@@ -72,7 +72,7 @@ Returns all quotes from the database.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v2/quotes/all?page=1&limit=10 ```
+``` https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=10 ```
 
 #### Response
 ```javascript

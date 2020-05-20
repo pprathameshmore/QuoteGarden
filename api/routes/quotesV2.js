@@ -7,11 +7,7 @@ const Quote = require('../models/quote');
 const cacheMiddleware = require('../middlewares/cache');
 
 /*
-<<<<<<< HEAD
 Version V2 start from here
-=======
-Verizon V2 start from here
->>>>>>> bd0f4529e3b3fee927c451cc59312ab40de4893d
 */
 
 //Get random quote
@@ -21,7 +17,7 @@ router.get('/v2/quotes/random', quoteController.v2Random);
 router.get('/v2/authors/:authorName', cacheMiddleware.isCached, quoteController.searchByAuthor);
 
 //Find by search query
-//router.get('/v2/quotes/:searchQuery', cacheMiddleware.isCached, quoteController.searchByQuote);
+router.get('/v2/quotes/:searchQuery', cacheMiddleware.isCached, quoteController.searchByQuote);
 
 //All quotes
 router.get('/v2/quotes/', cacheMiddleware.isCachedAll, quoteController.allQuotes);

@@ -7,7 +7,7 @@ const quoteSchema = new mongoose.Schema({
     quoteGenre: String
 });
 
-quoteSchema.index({ '_id': 1, 'quoteText': 1 });
+quoteSchema.index({ quoteText: 'text', quoteGenre: 'text' });
 
 //Create model on the basis of quote schema
 const Quote = new mongoose.model("quote", quoteSchema);

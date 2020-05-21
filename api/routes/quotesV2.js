@@ -16,6 +16,9 @@ router.get('/v2/quotes/random', quoteController.v2Random);
 //Find by author name and search query
 router.get('/v2/authors/:authorName', cacheMiddleware.isCached, quoteController.searchByAuthor);
 
+//Find by genre name
+router.get('/v2/genre/:genreName', cacheMiddleware.isCached, quoteController.searchByGenre);
+
 //Find by search query
 router.get('/v2/quotes/:searchQuery', cacheMiddleware.isCached, quoteController.searchByQuote);
 

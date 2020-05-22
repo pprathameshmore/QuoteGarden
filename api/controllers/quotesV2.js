@@ -144,7 +144,7 @@ exports.searchByGenre = async (req, res, next) => {
         let { author, genre, page = 1, limit = 10 } = req.query;
 
         const currentPage = parseInt(page);
-        const pageLimit = parseFloat(limit);
+        const pageLimit = parseInt(limit);
 
         const totalDocCount = await getDocCount.getDocCount();
 

@@ -66,6 +66,27 @@ Query parameters are optional
 }
 ```
 
+### Get quotes by Genre
+
+Returns multiple quotes for a particular genre.
+
+#### Request
+
+``` https://quote-garden.herokuapp.com/api/v2/genre/:genreName?page=1&limit=10 ```
+
+Query parameters are optional
+
+#### Response
+
+```javascript
+{
+  statusCode : int,
+  totalPages : int,
+  currentPage : int,
+  quotes : array
+}
+```
+
 ### Get all quotes
 
 Returns all quotes from the database.

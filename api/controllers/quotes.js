@@ -42,6 +42,36 @@ exports.author_name = async (request, response) => {
 
 }
 
+exports.search_genre = async (request, response) => {
+    try {
+        let count = await Quote.countDocuments({
+            quoteGenre: request.params.genreName
+        });
+        await Quote.find({
+            quoteGenre: request.params.genreName
+        }, (error, quotes) => {
+            if (error) {
+                console.log(error);
+                response.status(404).json({
+                    // The server can not find requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the resource itself does not exist. Servers may also send this response instead of 403 to hide the existence of a resource from an unauthorized client. This response code is probably the most famous one due to its frequent occurrence on the web.
+                    status: 404,
+                    message: "The server can not find requested resource."
+
+                });
+            } else {
+                response.status(200).json({
+                    count: count,
+                    results: quotes
+                });
+            }
+        });
+    } catch (error) {
+        return error;
+    }
+
+}
+
+
 exports.search_query = async (request, response) => {
     try {
         let query = request.params.query;

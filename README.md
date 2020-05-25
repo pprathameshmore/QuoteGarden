@@ -4,7 +4,7 @@
 # Quote Garden
 A REST API for quotes.
 
-I originally built this for [Achieve Chrome Extension](https://github.com/pprathameshmore/Achieve-Chrome-Extension) project and decided to publish for others to use as well. The database currently includes more than 5000 quotes
+I originally built this for [Achieve Chrome Extension](https://github.com/pprathameshmore/Achieve-Chrome-Extension) project and decided to publish for others to use as well. The database currently includes more than 75000 quotes
 
 ![Build](https://travis-ci.com/pprathameshmore/QuoteGarden.svg?branch=master)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020?style=plastic)

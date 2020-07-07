@@ -133,6 +133,7 @@ Make an issue with your application.
 - [pprathamesh.github.io](https://pprathameshmore.github.io/) by Prathamesh More
 - [Twitter Bot](https://twitter.com/quotegardenbot) by [ahzam1](https://github.com/ahzam1)
 - [MotivateU](https://github.com/Shankhanil/MotivateU) by [Shankhanil Ghosh](https://github.com/Shankhanil)
+- [Quote Garden](https://play.google.com/store/apps/details?id=iambedoy.quotegarden) by [cbedoy](https://github.com/cbedoy/QuoteGarden)
 
 ## Contributing
 

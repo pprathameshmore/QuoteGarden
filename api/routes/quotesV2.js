@@ -27,17 +27,4 @@ router.get('/v2/quotes/', cacheMiddleware.isCachedAll, quoteController.allQuotes
 //Get single quote
 router.get('/v2/quotes/:quote_id', quoteController.getSingleQuote);
 
-/* router.post('/v2/quotes/', (req, res, next) => {
-
-    const { quotes } = req.body;
-
-    Quote.insertMany(quotes).then(quotes => {
-        console.log('Inserted');
-        return res.send('Inserted all');
-    }).catch(error => {
-        console.error(error);
-    });
-
-}); */
-
 module.exports = router;

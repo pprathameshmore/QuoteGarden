@@ -157,21 +157,23 @@ exports.searchByQuote = async (req, res, next) => {
 
 exports.searchByGenre = async (req, res, next) => {
   try {
-    const { searchQuery } = req.params;
-    let { author, genre, page = 1, limit = 10 } = req.query;
+    const { genreName } = req.params;
+    let { page = 1, limit = 10 } = req.query;
 
     const currentPage = parseInt(page);
     const pageLimit = parseInt(limit);
 
+    console.log("Coming");
+
     const totalDocCount = await getDocCount.getDocCount();
 
-    if (searchQuery) {
-      await Quote.find({ quoteGenre: new RegExp(searchQuery, "ig") })
+    if (genreName) {
+      Quote.find({ quoteGenre: new RegExp(genreName, "ig") })
         .skip(pageLimit * currentPage - pageLimit)
         .limit(pageLimit)
         .then((quotes) => {
           if (quotes) {
-            const redisStoreId = searchQuery + "-" + page + "-" + limit;
+            const redisStoreId = genreName + "-" + page + "-" + limit;
 
             const total = Math.ceil(totalDocCount / pageLimit);
 
@@ -257,8 +259,9 @@ exports.allQuotes = async (req, res, next) => {
 
 exports.getSingleQuote = async (req, res, next) => {
   try {
+    console.log("Coming");
     const { quote_id } = req.params;
-    await Quote.findById(quote_id).then((quote) => {
+    Quote.findById(quote_id).then((quote) => {
       const response = generateResponse(200, 0, 0, quote);
       return res.status(200).json(response);
     });

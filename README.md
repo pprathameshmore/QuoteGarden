@@ -12,6 +12,11 @@ I originally built this for [Achieve Chrome Extension](https://github.com/pprath
 ![GitHub](https://img.shields.io/github/license/pprathameshmore/QuoteGarden?style=plastic)
 ![GitHub last commit](https://img.shields.io/github/last-commit/pprathameshmore/QuoteGarden?style=plastic)
 
+## Install NPM package
+```
+npm install @pprathameshmore/quotegardennpm@1.1.0
+```
+
 ## Table of Contents
 
 * [Get a random quote](#get-a-random-quote).

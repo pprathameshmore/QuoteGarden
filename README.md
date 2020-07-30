@@ -16,6 +16,7 @@ I originally built this for [Achieve Chrome Extension](https://github.com/pprath
 ```
 npm install @pprathameshmore/quotegardennpm@1.1.0
 ```
+[Documentation for NPM package](https://github.com/pprathameshmore/QuoteGardenNPM)
 
 ## Table of Contents
 

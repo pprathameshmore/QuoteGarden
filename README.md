@@ -16,12 +16,13 @@ I originally built this for [Achieve Chrome Extension](https://github.com/pprath
 
 * [Get a random quote](#get-a-random-quote).
 * [Get all quotes by author](#get-quotes-by-author).
+* [Get all quotes by genre](#get-quotes-by-genre).
 * [Get all quotes](#get-all-quotes).
 * [Get all quotes by keyword](#get-all-quotes-by-keyword).
 
 ## API Documentation
 
-#### The older version of API is now deprecating soon. Please upgrade to new version 2 (V2) API routes for improved performance, caching, paging, etc.
+#### The older version of API is now deprecating soon. Please upgrade to new version 2 (V2) API routes for improved performance.
 
 ### Get a random quote
 
@@ -60,6 +61,7 @@ Query parameters are optional
 ```javascript
 {
   statusCode : int,
+  message : String,
   totalPages : int,
   currentPage : int,
   quotes : array
@@ -81,6 +83,7 @@ Query parameters are optional
 ```javascript
 {
   statusCode : int,
+  message : String,
   totalPages : int,
   currentPage : int,
   quotes : array
@@ -99,6 +102,7 @@ Returns all quotes from the database.
 ```javascript
 {
   statusCode : int,
+  message :  String,
   totalPages : int,
   currentPage : int,
   quotes : array
@@ -118,6 +122,7 @@ Returns all quotes with matching keywords.
 ``` javascript
 {
   statusCode : int,
+  message : String,
   totalPages : int,
   currentPage : int,
   quotes : array

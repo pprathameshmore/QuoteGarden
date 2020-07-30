@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const quoteController = require("../controllers/quotesV2");
 
-const Quote = require("../models/quote");
-
 const cacheMiddleware = require("../middlewares/cache");
 
 /*
@@ -40,7 +38,5 @@ router.get(
   cacheMiddleware.isCachedAll,
   quoteController.allQuotes
 );
-//Get single quote
-router.get("/v2/quotes/:quote_id", quoteController.getSingleQuote);
 
 module.exports = router;

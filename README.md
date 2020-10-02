@@ -25,6 +25,7 @@ npm install @pprathameshmore/quotegardennpm@1.1.0
 * [Get all quotes by genre](#get-quotes-by-genre).
 * [Get all quotes](#get-all-quotes).
 * [Get all quotes by keyword](#get-all-quotes-by-keyword).
+* [Get all genres](#get-all-genres).
 
 ## API Documentation
 
@@ -132,6 +133,22 @@ Returns all quotes with matching keywords.
   totalPages : int,
   currentPage : int,
   quotes : array
+}
+```
+
+### Get all genres
+
+Returns all genres from the database.
+
+#### Request
+
+``` https://quote-garden.herokuapp.com/api/v2/genres```
+
+#### Response
+```javascript
+{
+  statusCode : int,
+  genres : array
 }
 ```
 

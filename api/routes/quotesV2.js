@@ -26,7 +26,7 @@ router.get(
 );
 
 router.get(
-  "/v2/genre",
+  "/v2/genres",
   cacheMiddleware.isCachedAll,
   quoteController.allGenres
 );

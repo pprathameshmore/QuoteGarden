@@ -25,6 +25,12 @@ router.get(
   quoteController.searchByGenre
 );
 
+router.get(
+  "/v2/genres",
+  cacheMiddleware.isCachedAll,
+  quoteController.allGenres
+);
+
 //Find by search query
 router.get(
   "/v2/quotes/:searchQuery",

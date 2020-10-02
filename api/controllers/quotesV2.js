@@ -149,6 +149,23 @@ exports.searchByGenre = async (req, res, next) => {
   }
 };
 
+exports.allGenres = async (req, res, next) => {
+  try {
+    Quote.distinct('quoteGenre')
+      .then((genres) => {
+        return res.status(200).json({
+          statusCode: 200,
+          genres: genres,
+        });
+      });
+  } catch (error) {
+    return res.status(500).json({
+      statusCode: 500,
+      message: error,
+    });
+  }
+};
+
 exports.allQuotes = async (req, res, next) => {
   let { page = 1, limit = 10 } = req.query;
   const totalDocCount = await documentCount(Quote);

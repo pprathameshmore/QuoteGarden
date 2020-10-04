@@ -20,7 +20,7 @@ router.get(
 
 //Find by genre name
 router.get(
-  "/v2/genre/:genreName",
+  "/v2/genres/:genreName",
   cacheMiddleware.isCached,
   quoteController.searchByGenre
 );

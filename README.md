@@ -81,7 +81,7 @@ Returns multiple quotes for a particular genre.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v2/genre/:genreName?page=1&limit=10 ```
+``` https://quote-garden.herokuapp.com/api/v2/genres/:genreName?page=1&limit=10 ```
 
 Query parameters are optional
 

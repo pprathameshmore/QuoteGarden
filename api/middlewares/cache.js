@@ -10,6 +10,7 @@ exports.isCached = (req, res, next) => {
 
     //Check in redis
     redisClient.get(authorName ? authorId : searchId, (err, reply) => {
+
         if (err) {
             console.log(err);
         }

@@ -4,7 +4,9 @@
   "description": "A REST API for quotes.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
+    "jest": "^26.5.2",
     "mongoose": "^5.7.5",
     "nodemon": "^2.0.4",
     "redis": "^3.0.2"

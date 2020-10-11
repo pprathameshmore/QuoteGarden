@@ -81,7 +81,7 @@ exports.searchByQuote = async (req, res, next) => {
         const total = Math.ceil(totalDocCount / pageLimit);
         const sendResponse = response({
           statusCode: 200,
-          message: `Quotes which includes ${searchQuery} keywords `,
+          message: `Quotes which includes ${searchQuery} keywords`,
           totalPages: total,
           currentPage: page,
           quotes: quotes,

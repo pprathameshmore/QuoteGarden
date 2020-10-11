@@ -4,7 +4,8 @@
   "description": "A REST API for quotes.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha tests/test.js --exit"
   },
   "repository": {
     "type": "git",
@@ -35,5 +36,10 @@
     "mongoose": "^5.7.5",
     "nodemon": "^2.0.4",
     "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.1.3"
   }
 }

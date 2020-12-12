@@ -42,7 +42,6 @@ class QuoteService {
         aggregateQuery,
         options
       );
-      console.log(randomQuotes);
       return randomQuotes;
     } catch (error) {
       throw new GeneralError(error);

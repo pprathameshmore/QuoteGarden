@@ -1,7 +1,7 @@
 {
-  "name": "node.js-folder-structure",
+  "name": "QuoteGarden",
   "version": "1.0.0",
-  "description": "Folder structure for Node.js",
+  "description": "A REST API for quotes.",
   "main": "server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -10,12 +10,15 @@
   },
   "keywords": [
     "quotegarden",
-    "quotes"
+    "quotes",
+    "freeapi",
+    "freequoteapi",
+    "restapiquotes",
+    "quotesapi"
   ],
   "author": "Prathamesh More",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

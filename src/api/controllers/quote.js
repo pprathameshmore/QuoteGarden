@@ -3,7 +3,7 @@ const QuoteService = require("../../services/quote");
 const { response } = require("../../utils/utils");
 
 const getRandomQuotes = async (req, res, next) => {
-  const { author, genre, query, count, page = 1, limit = 10 } = req.query;
+  const { author, genre, query, count = 1, page = 1, limit = 10 } = req.query;
   const {
     docs,
     totalDocs: totalQuotes,

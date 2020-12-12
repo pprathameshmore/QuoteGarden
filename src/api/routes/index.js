@@ -5,8 +5,8 @@ const quoteRouter = require("./modules/quote");
 const genreRouter = require("./modules/genre");
 const authorRouter = require("./modules/author");
 
-router.use("/v2/quotes", quoteRouter);
-router.use("/v2/genres", genreRouter);
-router.use("/v2/authors", authorRouter);
+router.use("/v3/quotes", quoteRouter);
+router.use("/v3/genres", genreRouter);
+router.use("/v3/authors", authorRouter);
 
 module.exports = router;

@@ -1,13 +1,7 @@
-const dotenv = require("dotenv");
+require("dotenv").config();
 
 // Set the NODE_ENV to 'development' by default
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
-
-const envFile = dotenv.config();
-
-if (envFile.error) {
-  throw new Error("env file is missing");
-}
 
 module.exports = {
   HOSTNAME: process.env.HOSTNAME,

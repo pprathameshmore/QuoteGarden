@@ -1,5 +1,3 @@
-![Icon](/assets/icon.png)
-
 
 # Quote Garden
 A REST API for quotes.
@@ -21,118 +19,138 @@ npm install @pprathameshmore/quotegardennpm@1.1.0
 ## Table of Contents
 
 * [Get a random quote](#get-a-random-quote).
-* [Get all quotes by author](#get-quotes-by-author).
-* [Get all quotes by genre](#get-quotes-by-genre).
-* [Get all quotes](#get-all-quotes).
-* [Get all quotes by keyword](#get-all-quotes-by-keyword).
+* [Get all quotes](#get-quotes)
 * [Get all genres](#get-all-genres).
+* [Get all authors](#get-all-authors).
 
 ## API Documentation
 
-#### The older version of API is now deprecating soon. Please upgrade to new version 2 (V2) API routes for improved performance.
+#### The older version of API deprecated i.e V1 and V2. Please upgrade to new V3.
 
 ### Get a random quote
 
-Returns a single random quote from the database.
+Returns a single random quote from the server.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v2/quotes/random ```
+``` https://quote-garden.herokuapp.com/api/v3/quotes/random```
+
+#### Params
+
+```
+author: string (Optional)
+genre: string (Optional)
+count: number (Optional)
+```
 
 #### Response
 
 ```javascript
 {
-  statusCode : int,
-  {
-    _id: string,
-    quoteText: string,
-    quoteAuthor: string
-  }
+    "statusCode": 200,
+    "message": "Random quotes",
+    "pagination": {
+        "currentPage": 1,
+        "nextPage": null,
+        "totalPages": 1
+    },
+    "totalQuotes": 1,
+    "data": [
+        {
+            "_id": "5eb17ab3b69dc744b4e81942",
+            "quoteText": "I think the thing we see is that as people are using video games more, they tend to watch passive TV a bit less. And so using the PC for the Internet, playing video games, is starting to cut into the rather unbelievable amount of time people spend watching TV.",
+            "quoteAuthor": "Bill Gates",
+            "quoteGenre": "time",
+            "__v": 0
+        }
+    ]
 }
-
 ```
 
-### Get quotes by author
+### Get quotes
 
-Returns multiple quotes for a particular author.
+Returns multiple quotes.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v2/authors/:authorName?page=1&limit=10 ```
+``` https://quote-garden.herokuapp.com/api/v3/quotes ```
 
-Query parameters are optional
+#### Params
+
+```
+author: string (Optional)
+genre: string (Optional)
+query: string (Optional)
+page: number (Optional)
+limit: number (Optional)
+```
 
 #### Response
 
 ```javascript
 {
-  statusCode : int,
-  message : String,
-  totalPages : int,
-  currentPage : int,
-  quotes : array
+    "statusCode": 200,
+    "message": "Quotes",
+    "pagination": {
+        "currentPage": 1,
+        "nextPage": 2,
+        "totalPages": 4
+    },
+    "totalQuotes": 4,
+    "data": [
+        {
+            "_id": "5eb17aaeb69dc744b4e72a4a",
+            "quoteText": "The first rule of any technology used in a business is that automation applied to an efficient operation will magnify the efficiency. The second is that automation applied to an inefficient operation will magnify the inefficiency.",
+            "quoteAuthor": "Bill Gates",
+            "quoteGenre": "business",
+            "__v": 0
+        }
+    ]
 }
 ```
+### Get all genres
 
-### Get quotes by Genre
-
-Returns multiple quotes for a particular genre.
+Returns all genres.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v2/genres/:genreName?page=1&limit=10 ```
-
-Query parameters are optional
-
-#### Response
-
-```javascript
-{
-  statusCode : int,
-  message : String,
-  totalPages : int,
-  currentPage : int,
-  quotes : array
-}
-```
-
-### Get all quotes
-
-Returns all quotes from the database.
-
-#### Request
-
-``` https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=10 ```
+``` https://quote-garden.herokuapp.com/api/v3/genres```
 
 #### Response
 ```javascript
 {
-  statusCode : int,
-  message :  String,
-  totalPages : int,
-  currentPage : int,
-  quotes : array
+    "statusCode": 200,
+    "message": "Genres",
+    "pagination": {
+        "currentPage": null,
+        "nextPage": null,
+        "totalPages": null
+    },
+    "totalQuotes": null,
+    "data": ["age", ...]
 }
 ```
 
-### Get all quotes by keyword
+### Get all authors
 
-Returns all quotes with matching keywords.
+Returns all authors.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v2/quotes/:searchQuery?page=1&limit=10```
+``` https://quote-garden.herokuapp.com/api/v3/authors```
 
 #### Response
-
-``` javascript
+```javascript
 {
-  statusCode : int,
-  message : String,
-  totalPages : int,
-  currentPage : int,
-  quotes : array
+    "statusCode": 200,
+    "message": "Authors",
+    "pagination": {
+        "currentPage": null,
+        "nextPage": null,
+        "totalPages": null
+    },
+    "totalQuotes": null,
+    "data": ["Bill Gates", ...]
 }
 ```
 
@@ -162,6 +180,7 @@ Make an issue with your application.
 - [Twitter Bot](https://twitter.com/quotegardenbot) by [ahzam1](https://github.com/ahzam1)
 - [MotivateU](https://github.com/Shankhanil/MotivateU) by [Shankhanil Ghosh](https://github.com/Shankhanil)
 - [Quote Garden](https://play.google.com/store/apps/details?id=iambedoy.quotegarden) by [cbedoy](https://github.com/cbedoy/QuoteGarden)
+- [Spontaneous - Random quotes](https://apps.apple.com/us/app/spontaneous-random-quotes/id1538265374#?platform=iphone) by [Nikola Franičević](https://github.com/FranicevicNikola)
 
 ## Contributing
 

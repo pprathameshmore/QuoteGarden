@@ -25,15 +25,13 @@ npm install @pprathameshmore/quotegardennpm@1.1.0
 
 ## API Documentation
 
-#### The older version of API deprecated i.e V1 and V2. Please upgrade to new V3.
-
 ### Get a random quote
 
 Returns a single random quote from the server.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/quotes/random```
+``` https://quote-garden.herokuapp.com/api/v2/quotes/random```
 
 #### Params
 
@@ -73,7 +71,7 @@ Returns multiple quotes.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/quotes ```
+``` https://quote-garden.herokuapp.com/api/v2/quotes ```
 
 #### Params
 
@@ -114,7 +112,7 @@ Returns all genres.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/genres```
+``` https://quote-garden.herokuapp.com/api/v2/genres```
 
 #### Response
 ```javascript
@@ -137,7 +135,7 @@ Returns all authors.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/authors```
+``` https://quote-garden.herokuapp.com/api/v2/authors```
 
 #### Response
 ```javascript

@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage --detectOpenHandles --watch"
   },
   "keywords": [
-    "node.js",
-    "node.js-folder-structure"
+    "quotegarden",
+    "quotes"
   ],
   "author": "Prathamesh More",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "eslint": "^7.11.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.2",
     "mongoose-aggregate-paginate-v2": "^1.0.42",
@@ -28,6 +29,8 @@
     "typedi": "^0.8.0"
   },
   "devDependencies": {
+    "eslint-plugin-jest": "^24.1.0",
+    "jest": "^26.5.2",
     "nodemon": "^2.0.4"
   }
 }

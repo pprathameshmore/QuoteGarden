@@ -51,11 +51,6 @@ const getAllQuotes = async (req, res, next) => {
     );
 };
 
-
-const getAllAuthors = async (req, res, next) => {
-
-}
-
 module.exports = {
   getRandomQuotes,
   getAllQuotes

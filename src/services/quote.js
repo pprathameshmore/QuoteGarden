@@ -5,8 +5,6 @@ const { GeneralError } = require("../utils/errors");
 
 class QuoteService {
   constructor() {
-    this.page = 1;
-    this.limit = 10;
     this.document = Quote;
   }
 
@@ -44,6 +42,7 @@ class QuoteService {
         aggregateQuery,
         options
       );
+      console.log(randomQuotes);
       return randomQuotes;
     } catch (error) {
       throw new GeneralError(error);

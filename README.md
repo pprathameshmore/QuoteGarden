@@ -156,7 +156,7 @@ Returns all authors.
 
 ## Support
 
-<a href="paypal.me/PrathameshMore" 
+<a href="https://paypal.me/PrathameshMore" 
 target="_blank">
 <img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" 
 title="PayPal – The safer, easier way to pay online!" border="0" />

@@ -162,6 +162,8 @@ target="_blank">
 title="PayPal – The safer, easier way to pay online!" border="0" />
 </a>
 
+<a>Pay using UPI : pprathameshmore@upi </a>
+
 
 ## Get featured
 If you are using my API in your application, get featured here.

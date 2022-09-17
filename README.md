@@ -1,5 +1,6 @@
 
 # Quote Garden
+
 A REST API for quotes.
 
 I originally built this for [Achieve Chrome Extension](https://github.com/pprathameshmore/Achieve-Chrome-Extension) project and decided to publish for others to use as well. The database currently includes more than 75000 quotes
@@ -11,9 +12,11 @@ I originally built this for [Achieve Chrome Extension](https://github.com/pprath
 ![GitHub last commit](https://img.shields.io/github/last-commit/pprathameshmore/QuoteGarden?style=plastic)
 
 ## Install NPM package
+
 ```
 npm install @pprathameshmore/quotegardennpm@1.1.0
 ```
+
 [Documentation for NPM package](https://github.com/pprathameshmore/QuoteGardenNPM)
 
 ## Table of Contents
@@ -27,20 +30,32 @@ npm install @pprathameshmore/quotegardennpm@1.1.0
 
 Please do upgrade to V3. Older versions stopped supporting
 
+### All Params
+
+Not all routes accept params. The available params for a route is listed under the method heading e.g under [Get a random quote](#get-a-random-quote), params available are listed below **Params** heading. If none are listed, the route doesn't accept any of them.
+
+```
+***Examples Of Use
+author: string (Optional) - ".../quotes/?author=Author+Name"
+genre: string (Optional) - ".../quotes/?genre=Genre+Name"
+query: string (Optional) - ".../quotes/?query=Query+Name"
+limit: number (Optional) - ".../quotes/?limit=1"
+page: number (Optional) - ".../quotes/?page=2"
+```
+
 ### Get a random quote
 
 Returns a single random quote from the server.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/quotes/random```
+```https://quote-garden.herokuapp.com/api/v3/quotes/random```
 
 #### Params
 
 ```
-author: string (Optional)
-genre: string (Optional)
-count: number (Optional)
+author: string (Optional) 
+genre: string (Optional) 
 ```
 
 #### Response
@@ -108,15 +123,17 @@ limit: number (Optional)
     ]
 }
 ```
+
 ### Get all genres
 
 Returns all genres.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/genres```
+```https://quote-garden.herokuapp.com/api/v3/genres```
 
 #### Response
+
 ```javascript
 {
     "statusCode": 200,
@@ -137,9 +154,10 @@ Returns all authors.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/authors```
+```https://quote-garden.herokuapp.com/api/v3/authors```
 
 #### Response
+
 ```javascript
 {
     "statusCode": 200,
@@ -156,26 +174,26 @@ Returns all authors.
 
 ## Support
 
-<a href="https://paypal.me/PrathameshMore" 
+<a href="https://paypal.me/PrathameshMore"
 target="_blank">
-<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" 
+<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this"
 title="PayPal – The safer, easier way to pay online!" border="0" />
 </a>
 
 <a>Pay using UPI : pprathameshmore@upi </a>
 
-
 ## Get featured
+
 If you are using my API in your application, get featured here.
 Make an issue with your application.
 
-- [frikishaan.xyz](https://frikishaan.xyz/) by [sheikh005](https://github.com/sheikh005)
-- [Bink Chrome Extension](https://chrome.google.com/webstore/detail/hobnhcjgdhdcmgcjlidgcladgdlbpgba) by [AmitGujar](https://github.com/AmitGujar)
-- [pprathamesh.github.io](https://pprathameshmore.github.io/) by Prathamesh More
-- [Twitter Bot](https://twitter.com/quotegardenbot) by [ahzam1](https://github.com/ahzam1)
-- [MotivateU](https://github.com/Shankhanil/MotivateU) by [Shankhanil Ghosh](https://github.com/Shankhanil)
-- [Quote Garden](https://play.google.com/store/apps/details?id=iambedoy.quotegarden) by [cbedoy](https://github.com/cbedoy/QuoteGarden)
-- [Spontaneous - Random quotes](https://apps.apple.com/us/app/spontaneous-random-quotes/id1538265374#?platform=iphone) by [Nikola Franičević](https://github.com/FranicevicNikola)
+* [frikishaan.xyz](https://frikishaan.xyz/) by [sheikh005](https://github.com/sheikh005)
+* [Bink Chrome Extension](https://chrome.google.com/webstore/detail/hobnhcjgdhdcmgcjlidgcladgdlbpgba) by [AmitGujar](https://github.com/AmitGujar)
+* [pprathamesh.github.io](https://pprathameshmore.github.io/) by Prathamesh More
+* [Twitter Bot](https://twitter.com/quotegardenbot) by [ahzam1](https://github.com/ahzam1)
+* [MotivateU](https://github.com/Shankhanil/MotivateU) by [Shankhanil Ghosh](https://github.com/Shankhanil)
+* [Quote Garden](https://play.google.com/store/apps/details?id=iambedoy.quotegarden) by [cbedoy](https://github.com/cbedoy/QuoteGarden)
+* [Spontaneous - Random quotes](https://apps.apple.com/us/app/spontaneous-random-quotes/id1538265374#?platform=iphone) by [Nikola Franičević](https://github.com/FranicevicNikola)
 
 ## Contributing
 
@@ -183,7 +201,7 @@ All feedback and contributions are welcome!
 
 ## License
 
-``` 
+```
 The MIT License (MIT)
 =====================
 
@@ -209,4 +227,3 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE. ```
-

@@ -194,6 +194,7 @@ Make an issue with your application.
 * [MotivateU](https://github.com/Shankhanil/MotivateU) by [Shankhanil Ghosh](https://github.com/Shankhanil)
 * [Quote Garden](https://play.google.com/store/apps/details?id=iambedoy.quotegarden) by [cbedoy](https://github.com/cbedoy/QuoteGarden)
 * [Spontaneous - Random quotes](https://apps.apple.com/us/app/spontaneous-random-quotes/id1538265374#?platform=iphone) by [Nikola Franičević](https://github.com/FranicevicNikola)
+* [Quote Generator](http://quote-generator-two-teal.vercel.app/) by [karabo-r](https://github.com/karabo-r) 
 
 ## Contributing
 

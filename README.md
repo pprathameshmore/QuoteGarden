@@ -33,7 +33,7 @@ Returns a single random quote from the server.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/quotes/random```
+``` https://quote-garden.onrender.com/api/v3/quotes/random```
 
 #### Params
 
@@ -73,7 +73,7 @@ Returns multiple quotes.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/quotes ```
+``` https://quote-garden.onrender.com/api/v3/quotes ```
 
 #### Params
 
@@ -114,7 +114,7 @@ Returns all genres.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/genres```
+``` https://quote-garden.onrender.com/api/v3/genres```
 
 #### Response
 ```javascript
@@ -137,7 +137,7 @@ Returns all authors.
 
 #### Request
 
-``` https://quote-garden.herokuapp.com/api/v3/authors```
+``` https://quote-garden.onrender.com/api/v3/authors```
 
 #### Response
 ```javascript

@@ -1,5 +1,5 @@
 
-# Quote Garden
+# Quote Garden - [Star on GitHub](https://github.com/pprathameshmore/QuoteGarden)
 A REST API for quotes.
 
 I originally built this for [Achieve Chrome Extension](https://github.com/pprathameshmore/Achieve-Chrome-Extension) project and decided to publish for others to use as well. The database currently includes more than 75000 quotes
